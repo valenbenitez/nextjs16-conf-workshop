@@ -1,6 +1,7 @@
-import {faker} from "@faker-js/faker";
+import { faker } from "@faker-js/faker";
 
-import {delay} from "./utils";
+import { delay } from "./utils";
+import { cacheTag } from "next/cache";
 
 export type Category = ReturnType<typeof generateData>["categories"][number];
 
@@ -64,9 +65,9 @@ function generateData(postCount: number = 50) {
         name: faker.person.fullName(),
         avatar: faker.image.avatar(),
       },
-      publishedAt: faker.date.recent({days: 30}).toISOString(),
-      readTime: faker.number.int({min: 3, max: 12}),
-      imageUrl: faker.image.urlPicsumPhotos({width: 800, height: 400}),
+      publishedAt: faker.date.recent({ days: 30 }).toISOString(),
+      readTime: faker.number.int({ min: 3, max: 12 }),
+      imageUrl: faker.image.urlPicsumPhotos({ width: 800, height: 400 }),
     });
 
     selectedCategory.postCount++;
@@ -74,10 +75,10 @@ function generateData(postCount: number = 50) {
 
   blogPosts.sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime());
 
-  return {categories, blogPosts};
+  return { categories, blogPosts };
 }
 
-const {categories: CATEGORIES, blogPosts: BLOG_POSTS} = generateData(50);
+const { categories: CATEGORIES, blogPosts: BLOG_POSTS } = generateData(50);
 
 export async function getBlogPosts(category?: string): Promise<BlogPost[]> {
   console.info(
@@ -106,6 +107,10 @@ export async function getFeaturedBlogPosts(category?: string): Promise<BlogPost[
 }
 
 export async function getCategories(): Promise<Category[]> {
+  "use cache"
+
+  cacheTag('categories')
+  
   console.info("[API] Fetching categories (250ms delay)");
 
   await delay(250);
