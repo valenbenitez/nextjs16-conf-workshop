@@ -2,7 +2,7 @@
 
 A small blog application built to explore and demonstrate **caching strategies in Next.js 16** using Cache Components, Partial Prerendering (PPR), and on-demand revalidation.
 
-**Live demo:** https://beni-blog-16.vercel.app
+**Live demo:** https://blog-next16.vercel.app/
 
 ## What this project demonstrates
 
