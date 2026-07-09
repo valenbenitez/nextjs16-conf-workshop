@@ -34,17 +34,17 @@ export default async function BlogPage({ params }: { params: Promise<{ slug: str
     }
 
     return (
-        <main className="flex flex-col gap-6">
+        <article className="flex flex-col gap-6">
             <h2 className="text-4xl font-bold">{post?.title}</h2>
             <p>{post.content}</p>
 
             <hr />
             <section>
+                <h2 className="mb-8 text-3xl font-bold tracking-tight">Featured Posts</h2>
                 <Suspense fallback={<BlogPostsSkeleton />}>
-                    <h2 className="mb-8 text-3xl font-bold tracking-tight">Featured Posts</h2>
                     <FeaturedBlogPosts />
                 </Suspense>
             </section>
-        </main>
+        </article>
     )
 }

@@ -15,7 +15,7 @@ export function GET(request: NextRequest) {
     }
 
     if (!path) {
-        return NextResponse.json({ error: "Tag is required" }, { status: 400 })
+        return NextResponse.json({ error: "Path is required" }, { status: 400 })
     }
 
     revalidatePath(path, defaultType)

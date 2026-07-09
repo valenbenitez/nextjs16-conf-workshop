@@ -112,7 +112,6 @@ export async function getCategories(): Promise<Category[]> {
   cacheTag('categories')
 
   console.info("[API] Fetching categories (250ms delay)");
-  const id = faker.string.uuid();
 
   await delay(250);
 
