@@ -110,12 +110,19 @@ export async function getCategories(): Promise<Category[]> {
   "use cache"
 
   cacheTag('categories')
-  
+
   console.info("[API] Fetching categories (250ms delay)");
+  const id = faker.string.uuid();
 
   await delay(250);
 
-  return CATEGORIES;
+  return [...CATEGORIES, {
+    id,
+    name: `Cat ${id}`,
+    slug: 'all-slug',
+    description: 'All description',
+    postCount: 0
+  }];
 }
 
 export async function getBlogPostBySlug(slug: string): Promise<BlogPost | null> {
