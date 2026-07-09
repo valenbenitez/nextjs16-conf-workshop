@@ -4,6 +4,8 @@ import { Suspense } from "react";
 
 export default function CategoryFilter({ categories }: { categories: Category[] }) {
   return (
+    <Suspense fallback={<p>Loading...</p>}>
       <CategoriesComponent categories={categories} />
+    </Suspense>
   );
 }
