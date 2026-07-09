@@ -1,6 +1,6 @@
 import { getBlogPosts, getCategories } from "@/api";
 
-import BlogPosts from "@/components/blog-posts";
+import BlogPosts, { BlogPostsSkeleton } from "@/components/blog-posts";
 import CategoryFilter from "@/components/category-filter";
 import { Suspense } from "react";
 
@@ -30,7 +30,7 @@ export default async function BlogPage({
       </header>
       <CategoryFilter categories={categories} />
 
-      <Suspense fallback={<p>Loading</p>}>
+      <Suspense fallback={<BlogPostsSkeleton />}>
         <SearchResults searchParams={searchParams} />
       </Suspense>
 
