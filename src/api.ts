@@ -116,13 +116,7 @@ export async function getCategories(): Promise<Category[]> {
 
   await delay(250);
 
-  return [...CATEGORIES, {
-    id,
-    name: `Cat ${id}`,
-    slug: 'all-slug',
-    description: 'All description',
-    postCount: 0
-  }];
+  return CATEGORIES;
 }
 
 export async function getBlogPostBySlug(slug: string): Promise<BlogPost | null> {

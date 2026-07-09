@@ -5,9 +5,9 @@ import Link from "next/link";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "ACME Blog",
+  title: "BENI Blog",
   description: "A modern blog platform built with Next.js",
-  metadataBase: new URL("https://acme-blog-16.vercel.app"),
+  metadataBase: new URL("https://beni-blog-16.vercel.app"),
 };
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
@@ -20,7 +20,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
             <div className="container mx-auto flex h-14 max-w-screen-2xl items-center px-4 sm:px-6 lg:px-8">
               <div className="mr-4 flex">
                 <Link className="mr-6 flex items-center space-x-2" href="/">
-                  <span className="text-lg font-bold">ACME</span>
+                  <span className="text-lg font-bold">BENI</span>
                 </Link>
                 <nav className="flex items-center space-x-6 text-sm font-medium">
                   <Link
@@ -55,16 +55,16 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
                   Built by{" "}
                   <a
                     className="hover:text-foreground font-medium underline underline-offset-4"
-                    href="https://acme.com"
+                    href="https://valentinbenitez.vercel.app/"
                     rel="noreferrer"
                     target="_blank"
                   >
-                    ACME Inc
+                    BENI Inc
                   </a>
                   . The source code is available on{" "}
                   <a
                     className="hover:text-foreground font-medium underline underline-offset-4"
-                    href="https://github.com/acme/blog"
+                    href="https://github.com/valenbenitez/nextjs16-conf-workshop"
                     rel="noreferrer"
                     target="_blank"
                   >

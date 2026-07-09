@@ -24,7 +24,7 @@ export default async function HomePage() {
     <main className="space-y-16">
       <section className="bg-card rounded-xl border px-6 py-16 text-center">
         <h1 className="mb-4 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-          Welcome to Our Blog
+          Welcome to my Blog Page
         </h1>
         <p className="text-muted-foreground mx-auto mb-8 max-w-2xl text-lg sm:text-xl">
           Explore our collection of articles across various topics
